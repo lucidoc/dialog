@@ -92,8 +92,10 @@ DlgResult fileDlg(FileDlgParams* params) {
 	if(self->params->title != nil) {
 		[panel setTitle:[[NSString alloc] initWithUTF8String:self->params->title]];
 	}
+
+	// cannot use setAllowedFileTypes as it was depcreated in Mac 12.0: https://developer.apple.com/documentation/appkit/nssavepanel/1534419-allowedfiletypes
 	if(self->params->numext > 0) {
-		[panel setAllowedFileTypes:[NSArray arrayWithObjects:(NSString**)self->params->exts count:self->params->numext]];
+		[panel setAllowedContentTypes:[NSArray arrayWithObjects:(NSString**)self->params->exts count:self->params->numext]];
 	}
 	if(self->params->relaxext) {
 		[panel setAllowsOtherFileTypes:YES];
