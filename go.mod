@@ -1,5 +1,5 @@
 module github.com/lucidoc/dialog
 
-require (
-	github.com/TheTitanrain/w32 v0.0.0-20180517000239-4f5cfb03fabf
-)
+go 1.21.5
+
+require github.com/TheTitanrain/w32 v0.0.0-20200114052255-2654d97dbd3d
